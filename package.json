@@ -1,0 +1,19 @@
+{
+  "name": "wg-content-update-bot",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun bot.ts",
+    "dev": "bun bot.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.8",
+    "discord.js": "^14.14.1"
+  }
+}
