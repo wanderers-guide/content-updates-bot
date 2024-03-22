@@ -32,6 +32,11 @@ Bun.serve({
 });
 
 async function handleNewUpdate(req: Request) {
+  const authToken = req.headers.get('Authorization');
+  if (authToken !== `Bearer ${process.env.CONTENT_UPDATE_KEY}`) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
   const data = (await req.json()) as UpdatePackage;
 
   const response = await postContentUpdate(data);
