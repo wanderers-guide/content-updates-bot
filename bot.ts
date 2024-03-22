@@ -73,6 +73,12 @@ async function postContentUpdate(data: UpdatePackage) {
     await message.react('👍');
     await message.react('👎');
 
+    await message.startThread({
+      name: 'Update Request Discussion',
+      autoArchiveDuration: 10080, // 7 days in minutes
+      reason: 'To discuss the update request',
+    });
+
     return { success: true, messageId: message.id };
   }
 
