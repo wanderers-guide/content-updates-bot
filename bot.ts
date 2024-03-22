@@ -62,7 +62,7 @@ async function postContentUpdate(data: UpdatePackage) {
     const message = await channel.send({
       content: `
   
-**Update Request from ${data.username} (#${data.update.user_id})**
+**Update Request from ${data.username}**
 > _To change \`${objName}\` from the ${data.source}._
 > https://wanderersguide.app/content-update/8
 
