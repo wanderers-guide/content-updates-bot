@@ -64,7 +64,7 @@ async function postContentUpdate(data: UpdatePackage) {
   
 **Update Request from ${data.username}**
 > _To change \`${objName}\` from the ${data.source}._
-> https://wanderersguide.app/content-update/8
+> https://wanderersguide.app/content-update/${data.update.id}
 
     `.trim(),
     });
