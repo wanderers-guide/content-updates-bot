@@ -199,7 +199,10 @@ client.on('messageReactionAdd', async (reaction, user) => {
   }
 });
 
-const supabase = createClient(process.env.SUPABASE_URL ?? '', process.env.SUPABASE_KEY ?? '');
+const supabase = createClient(
+  process.env.SUPABASE_URL ?? '',
+  process.env.SUPABASE_SERVICE_ROLE_KEY ?? ''
+);
 async function updateContentUpdate(change: {
   discord_msg_id: string;
   discord_user_id: string;
