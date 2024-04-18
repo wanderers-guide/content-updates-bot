@@ -74,8 +74,8 @@ async function postContentUpdate(data: UpdatePackage) {
     await message.react('👎');
 
     await message.startThread({
-      name: 'Update Request Discussion',
-      autoArchiveDuration: 10080, // 7 days in minutes
+      name: `Discussion: ${objName}`,
+      autoArchiveDuration: 1440, // 1 day in minutes
       reason: 'To discuss the update request',
     });
 
@@ -98,8 +98,8 @@ async function postContentUpdate(data: UpdatePackage) {
     await message.react('👎');
 
     await message.startThread({
-      name: 'Update Request Discussion',
-      autoArchiveDuration: 10080, // 7 days in minutes
+      name: `Discussion: ${objName}`,
+      autoArchiveDuration: 1440, // 1 day in minutes
       reason: 'To discuss the update request',
     });
 
