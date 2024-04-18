@@ -82,6 +82,30 @@ async function postContentUpdate(data: UpdatePackage) {
     return { success: true, messageId: message.id };
   }
 
+  if (data.update.action === 'CREATE') {
+    const message = await channel.send({
+      content: `
+  
+**Update Request from ${data.username}**
+> _To add_ \`${objName}\` _to the ${data.source}._
+> https://wanderersguide.app/content-update/${data.update.id}
+
+    `.trim(),
+    });
+    await message.react('✅');
+    await message.react('❌');
+    await message.react('👍');
+    await message.react('👎');
+
+    await message.startThread({
+      name: 'Update Request Discussion',
+      autoArchiveDuration: 10080, // 7 days in minutes
+      reason: 'To discuss the update request',
+    });
+
+    return { success: true, messageId: message.id };
+  }
+
   return { success: false };
 }
 
